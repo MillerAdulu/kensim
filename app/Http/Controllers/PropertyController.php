@@ -46,44 +46,48 @@ class PropertyController extends Controller
     elseif ($category == 1):
 	  $properties = $this->searchByMaxPrice($parameter);
     elseif ($category == 2):
-	  $properties = $this->searchByMinPrice($parameter);
+    $properties = $this->searchByMinPrice($parameter);
+    elseif ($category == 3):
+    $properties = $this->searchByMode(0);
+    elseif ($category == 3):
+    $properties = $this->searchByMode(1);
 	endif;
 
-	return view('results', compact($properties));
+	return view('property.results', compact('properties'));
   }
 
   public function searchByLocation($location) {
-	$properties = Property::where('location', $location);
+	$properties = Property::where('location', $location)->get();
 	return $properties;
   }
 
   public function searchByMaxPrice($maxPrice) {
-    $properties = Property::where('price', '<=', $maxPrice);
+    $properties = Property::where('price', '<=', $maxPrice)->get();
     return $properties;
   }
 
   public function searchByMinPrice($minPrice) {
-	$properties = Property::where('price', '=>', $minPrice);
+	$properties = Property::where('price', '>=', $minPrice)->get();
 	return $properties;
   }
 
   public function searchByBedrooms($bedrooms) {
-	$properties = Property::where('bedrooms', '=>', $bedrooms);
+	$properties = Property::where('bedrooms', '=>', $bedrooms)->get();
 	return $properties;
   }
 
   public function searchByMode($mode) {
-	$properties = Property::where('mode', $mode);
+	$properties = Property::where('mode', $mode)->get();
 	return $properties;
   }
 
   public function searchByBathrooms($bathrooms) {
-	$properties = Property::where('bathrooms', '=>', $bathrooms);
+	$properties = Property::where('bathrooms', '=>', $bathrooms)->get();
 	return $properties;
   }
 
   public function searchBySize($size) {
-	$properties = Property::where('size', '=>', $size);
+	$properties = Property::where('size', '=>', $size)->get();
 	return $properties;
   }
 

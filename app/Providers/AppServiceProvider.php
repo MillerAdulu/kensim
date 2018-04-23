@@ -4,10 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 
 class AppServiceProvider extends ServiceProvider
 {

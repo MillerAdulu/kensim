@@ -27,7 +27,7 @@ Location:<br>
 Mode:<br>
   <input type="radio" name="mode" value="0"> For Sale<br>
   <input type="radio" name="mode" value="1"> For Rent<br>
-  <input type="radio" name="mode" value="1"> Open Status<br>
+  <input type="radio" name="mode" value="2"> Open Status<br>
   <br>
 Price Min:<br>
 
