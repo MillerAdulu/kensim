@@ -11,22 +11,11 @@
 |
 */
 
-Route::get('/', function() {
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/property', 'PropertyController@index');
-Route::get('/property/create','PropertyController@create');
-Route::post('/property/store','PropertyController@store');
-Route::get('/type/create','TypeController@create');
-Route::post('/type/store','TypeController@store');
-Route::post('/search','PropertyController@searchResults');
-Route::get('/search', 'PropertyController@search');
-Route::post('/searchby','PropertyController@searchby');
-Route::get('/searchby', function () {
-    return view('property.searchby');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
-
-
-
-
