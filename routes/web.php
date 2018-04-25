@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/blog', 'PostController@allPosts');
+
+Route::get('/blog/{slug}', 'PostController@showPost');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
