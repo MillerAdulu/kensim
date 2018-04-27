@@ -6,3 +6,5 @@
 	Status:: {{ $post->status }}
 	<hr>
 @endforeach
+
+@include('chat.chat')
