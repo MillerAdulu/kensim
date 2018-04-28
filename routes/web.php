@@ -19,8 +19,10 @@ Route::get('/blog', 'PostController@allPosts');
 
 Route::get('/blog/{slug}', 'PostController@showPost');
 
+Route::get('/property', 'PropertyController@index');
+
+Route::get('/property/{id}', 'PropertyController@show');
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
-Route::get('/property', 'PropertyController@index');

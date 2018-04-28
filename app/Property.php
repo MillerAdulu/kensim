@@ -4,8 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Spatial;
-
+use Grimzy\LaravelMysqlSpatial\Eloquent\SpatialTrait;
 class Property extends Model
 {
-    use Spatial;
+  use Spatial;
+  use SpatialTrait;
+
+  protected $spatialFields = [
+	'gps_coordinates',
+  ];
 }

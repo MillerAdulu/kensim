@@ -2,91 +2,61 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use App\Property;
+use App\Type;
+use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
+use TCG\Voyager\Traits\Spatial;
+
 
 class PropertyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $properties = Property::all();
+  use Spatial;
 
-        return view('propety.create', compact('properties'));
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index()
+  {
+	$properties = Property::all();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        
-    }
+	return view('property.all', compact('properties'));
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function show($id)
+  {
+	$property = Property::find($id);
+	$types = Type::all();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+	foreach($types as $type):
+	  if($type->id = $property->property_type):
+		$property->type = $type->type;
+	  endif;
+	endforeach;
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-    public function searchPropertyByCategory(Request $request){
-        $properties = Property::where ('category',$request->query('id'));
-        return view('property.create', compact('properties'));
+	$latitude = $property->gps_coordinates->getLat();
+	$longitude = $property->gps_coordinates->getLng();
 
-    }
+	Mapper::map($latitude, $longitude);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+	return view('property.single', compact('property'));
+
+  }
+
+  public function searchPropertyByCategory(Request $request){
+	$properties = Property::where ('category', $request->query('id'));
+	return view('property.create', compact('properties'));
+  }
+
+
+
 }
