@@ -73,6 +73,11 @@ class PropertyController extends Controller
     {
         //
     }
+    public function searchPropertyByCategory(Request $request){
+        $properties = Property::where ('category',$request->query('id'));
+        return view('property.create', compact('properties'));
+
+    }
 
     /**
      * Remove the specified resource from storage.
