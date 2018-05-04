@@ -23,6 +23,10 @@ Route::get('/property', 'PropertyController@index');
 
 Route::get('/property/{id}', 'PropertyController@show');
 
+Route::get('/search', 'PropertyController@showSearchForm');
+
+Route::post('/search', 'PropertyController@results');
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Property;
 use App\Type;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
+use Illuminate\Http\Request;
 use TCG\Voyager\Traits\Spatial;
 
 
@@ -46,6 +47,7 @@ class PropertyController extends Controller
 	$latitude = $property->gps_coordinates->getLat();
 	$longitude = $property->gps_coordinates->getLng();
 
+
 	Mapper::map($latitude, $longitude);
 
 	return view('property.single', compact('property'));
@@ -57,6 +59,12 @@ class PropertyController extends Controller
 	return view('property.create', compact('properties'));
   }
 
+  public function showSearchForm(){
+	return view('property.search');
+  }
 
+  public function results(Request $request){
+    var_dump($request);
+  }
 
 }

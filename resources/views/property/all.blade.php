@@ -9,7 +9,9 @@
     Size: {{ $property->size }} <br>
     Type: {{ $property->type }} <br>
     Image:: <img src="{{ Voyager::image($property->featured_image) }}"/> <br>
-    Description: {{ $property->description }} <br>
+    Description: {{ $property->description }}
+
+    <hr>
 
 @endforeach
 

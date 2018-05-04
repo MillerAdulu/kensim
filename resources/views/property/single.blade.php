@@ -10,6 +10,10 @@ Image:: <img src="{{ Voyager::image($property->featured_image) }}"/> <br>
 Description: {{ $property->description }} <br>
 <hr>
 
+@foreach(json_decode($property->gallery) as $image)
+	<img src="{{ Voyager::image($image) }}" />
+@endforeach
+
 <div style="width: 500px; height: 500px;">
 	{!! Mapper::render() !!}
 </div>
