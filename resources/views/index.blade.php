@@ -1,202 +1,81 @@
-@extends ('main')
+@extends('main')
+
 @section('content')
-			<!-- start banner Area -->
-			<section class="banner-area relative" id="home">
-				<div class="overlay overlay-bg"></div>
-				<div class="container">
-					<div class="row fullscreen align-items-center justify-content-center" style="height: 915px;">
-						<div class="banner-content col-lg-12 col-md-12">
+    <div class="slider-area">
+        <div class="slider">
+            <div id="bg-slider" class="owl-carousel owl-theme">
 
-							<div class="search-field">
-								<form class="search-form" action="#">
-									 <div class="row">
-									 	<div class="col-lg-12 d-flex align-items-center justify-content-center toggle-wrap">
-											<div class="row">
-												<div class="col">
-													<h4 class="search-title">Search Properties For</h4>
-												</div>
-												<div class="col">
-													<div class="onoffswitch3 d-block mx-auto">
-													    <input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
-													    <label class="onoffswitch3-label" for="myonoffswitch3">
-													        <span class="onoffswitch3-inner">
-													            <span class="onoffswitch3-active">
-													            	<span class="onoffswitch3-switch">Sell</span>
-													            	<span class="lnr lnr-arrow-right"></span>
-													            </span>
-													            <span class="onoffswitch3-inactive">
-													            	<span class="lnr lnr-arrow-left"></span>
-													            	<span class="onoffswitch3-switch">Rent</span>
-													            </span>
-													        </span>
-													    </label>
-													</div>													
-												</div>
-											</div>
-									 	</div>
-									    <div class="col-lg-3 col-md-6 col-xs-6">
-											<select name="location" class="app-select form-control" required>
-												<option data-display="Choose locations">Choose locations</option>
-												<option value="1">Dhaka</option>
-												<option value="2">Rangpur</option>
-												<option value="3">Bogra</option>
-											</select>
-									    </div>
-									    <div class="col-lg-3 col-md-6 col-xs-6">
-											<select name="property-type" class="app-select form-control" required>
-												<option data-display="Property Type">Property Type</option>
-												<option value="1">Property type 1</option>
-												<option value="2">Property type 2</option>
-												<option value="3">Property type 3</option>
-											</select>
-									    </div>
-									    <div class="col-lg-3 col-md-6 col-xs-6">
-											<select name="bedroom" class="app-select form-control" required>
-												<option data-display="Bedrooms">Bedrooms</option>
-												<option value="1">One</option>
-												<option value="2">Two</option>
-												<option value="3">Three</option>
-											</select>
-									    </div>
-									    <div class="col-lg-3 col-md-6 col-xs-6">
-											<select name="bedroom" class="app-select form-control" required>
-												<option data-display="Bedrooms">Bedrooms</option>
-												<option value="1">One</option>
-												<option value="2">Two</option>
-												<option value="3">Three</option>
-											</select>
-									    </div>
-									    <div class="col-lg-4 range-wrap">
-									    	<p>Price Range:</p>
-									    	<input type="text" id="range" value="" name="range" />
-									    </div>	
-									    <div class="col-lg-4 range-wrap">
-									    	<p>Area Range(sqm):</p>
-									    	<input type="text" id="range2" value="" name="range" />
-									    </div>										    
-									    <div class="col-lg-4 d-flex justify-content-end">
-											<button class="primary-btn mt-50" style="height: 45px;">Search Properties<span class="lnr lnr-arrow-right"></span></button>
-										</div>						  
-									  </div>
-							  	</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- End banner Area -->
+                <div class="item"><img src="assets/img/slide1/slider-image-1.jpg" alt="Mirror Edge"></div>
+                <div class="item"><img src="assets/img/slide1/slider-image-2.jpg" alt="The Last of us"></div>
+                <div class="item"><img src="assets/img/slide1/slider-image-4.jpg" alt="GTA V"></div>
+
+            </div>
+        </div>
+        <div class="container slider-content">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+                    <h2>property Searching Just Easier</h2>
+--                     <div class="" data-wow-delay="0.8s">
 
 
+                                <input type="text"align="center" class="form-control" placeholder="Search">
+                        </form>
+                            </div>
+                            <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
+                                    <!-- End of  -->
 
-			<!-- Start property Area -->
-			<section class="property-area section-gap relative" id="property">
-				<div class="overlay overlay-bg"></div>
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="col-md-8 pb-40 header-text">
-							<h1>Our Top Rated Properties</h1>
-							<p>
-								Who are in extremely love with eco friendly system.
-							</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="single-property">
-								<div class="images">
-									<img class="img-fluid mx-auto d-block" src="img/s1.jpg" alt="">
-									<span>For Sale</span>
-								</div>
-								
-								<div class="desc">
-									<div class="top d-flex justify-content-between">
-										<h4><a href="#">04 Bed Duplex</a></h4>
-										<h4>$3.5M</h4>
-									</div>
-									<div class="middle">
-										<div class="d-flex justify-content-start">
-										<p>Bed: 04</p>
-										<p>Bath: 03</p>
-										<p>Area: 750sqm</p>
-										</div>
-										<div class="d-flex justify-content-start">
-										<p>Pool: <span class="gr">Yes</span></p>
-										<p>Internet: <span class="rd">No</span></p>
-										<p>Cleaning: <span class="rd">No</span></p>
-										</div>
-									</div>
-									<div class="bottom d-flex justify-content-start">
-										<p><span class="lnr lnr-heart"></span> 15 Likes</p>
-										<p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-									</div>	
-								</div>	
-							</div>
-						</div>	
-						<div class="col-lg-4">
-							<div class="single-property">
-								<div class="images">
-									<img class="img-fluid mx-auto d-block" src="img/s2	.jpg" alt="">
-									<span>For Sale</span>
-								</div>
-								
-								<div class="desc">
-									<div class="top d-flex justify-content-between">
-										<h4><a href="#">04 Bed Duplex</a></h4>
-										<h4>$3.5M</h4>
-									</div>
-									<div class="middle">
-										<div class="d-flex justify-content-start">
-										<p>Bed: 04</p>
-										<p>Bath: 03</p>
-										<p>Area: 750sqm</p>
-										</div>
-										<div class="d-flex justify-content-start">
-										<p>Pool: <span class="gr">Yes</span></p>
-										<p>Internet: <span class="rd">No</span></p>
-										<p>Cleaning: <span class="rd">No</span></p>
-										</div>
-									</div>
-									<div class="bottom d-flex justify-content-start">
-										<p><span class="lnr lnr-heart"></span> 15 Likes</p>
-										<p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-									</div>	
-								</div>	
-							</div>
-						</div>	
-						<div class="col-lg-4">
-							<div class="single-property">
-								<div class="images">
-									<img class="img-fluid mx-auto d-block" src="img/s3.jpg" alt="">
-									<span>For Sale</span>
-								</div>
-								
-								<div class="desc">
-									<div class="top d-flex justify-content-between">
-										<h4><a href="#">04 Bed Duplex</a></h4>
-										<h4>$3.5M</h4>
-									</div>
-									<div class="middle">
-										<div class="d-flex justify-content-start">
-										<p>Bed: 04</p>
-										<p>Bath: 03</p>
-										<p>Area: 750sqm</p>
-										</div>
-										<div class="d-flex justify-content-start">
-										<p>Pool: <span class="gr">Yes</span></p>
-										<p>Internet: <span class="rd">No</span></p>
-										<p>Cleaning: <span class="rd">No</span></p>
-										</div>
-									</div>
-									<div class="bottom d-flex justify-content-start">
-										<p><span class="lnr lnr-heart"></span> 15 Likes</p>
-										<p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-									</div>	
-								</div>	
-							</div>
-						</div>																											
-					</div>
-				</div>	
-			</section>
-			<!-- End property Area -->	
+                                </div>
+
+                            </div>
+
+                    </div>
+                </div>
+
+    <!-- property area -->
+    <div class="content-area recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                    <!-- /.feature title -->
+                    <h2>Top properties</h2>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="proerty-th">
+                    <div class="col-sm-6 col-md-3 p0">
+                        <div class="box-two proerty-item">
+                            <div class="item-thumb">
+                                <a href="property-1.html" ><img src="assets/img/demo/property-1.jpg"></a>
+                            </div>
+                            <div class="item-entry overflow">
+                                <h5><a href="property-1.html" >Super nice villa </a></h5>
+                                <div class="dot-hr"></div>
+                                <span class="pull-left"><b>Area :</b> 120m </span>
+                                <span class="proerty-price pull-right">$ 300,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6 col-md-3 p0">
+                        <div class="box-tree more-proerty text-center">
+                            <div class="item-tree-icon">
+                                <i class="fa fa-th"></i>
+                            </div>
+                            <div class="more-entry overflow">
+                                <h5><a href="property-1.html" >CAN'T DECIDE ? </a></h5>
+                                <h5 class="tree-sub-ttl">Show all properties</h5>
+                                <a href="" class="btn border-btn more-black btn-link">All properties</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 @endsection
-

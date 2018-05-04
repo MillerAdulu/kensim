@@ -1,12 +1,14 @@
 @extends ('main')
 @section('content')
 
+
+
     <!-- Start contact-info Area -->
     <section class="contact-info-area section-gap">
         <div class="container">
             <div class="row">
                 <div class="single-info col-lg-3 col-md-6">
-                    <h4>Visit Our Office</h4>
+                    <h4><i class="fa fa-building"></i>Visit Our Office</h4>
                     <p>
                         56/8, bir uttam qazi nuruzzaman
                         road, west panthapath, kalabagan,

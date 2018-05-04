@@ -1,5 +1,11 @@
 @extends ('main')
 @section('content')
+
+	<link rel="stylesheet" href="{{asset('custom/main.css')}}">
+	<link rel="stylesheet" href="{{asset('custom/linearicons.css')}}">
+
+	<link rel="stylesheet" href="{{asset('custom/magnific-popup.css')}}">
+
 	<!-- Start service Area -->
 	<section class="service-area section-gap" id="service">
 		<div class="container">

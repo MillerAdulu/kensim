@@ -19,10 +19,10 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('contactus', function () {
+Route::get('/contactus', function () {
     return view('contactus');
     });
-Route::get('aboutus', function () {
+Route::get('about-us', function () {
     return view('aboutus');
 
 Route::get('property', function () {

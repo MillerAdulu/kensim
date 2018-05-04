@@ -1,5 +1,5 @@
-<h1>This will be a custom error page</h1>
+@extends('main')
 
-<h1>404</h1>
-
-<h2>This page doesn't exist</h2>
+@section('content')
+    <div class="">404 page not found</div>
+@endsection
