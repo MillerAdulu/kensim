@@ -10,10 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'PropertyController@home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/contact-us', 'ContactController@show');
+
+Route::post('/contact-us', 'ContactController@submit');
+
+Route::get('about-us', 'PropertyController@getAbout');
+
 
 Route::get('/blog', 'PostController@allPosts');
 
@@ -23,10 +27,6 @@ Route::get('/property', 'PropertyController@index');
 
 Route::get('/property/{id}', 'PropertyController@show');
 
-Route::get('/search', 'PropertyController@showSearchForm');
-
-Route::post('/search', 'PropertyController@results');
-
 Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+  Voyager::routes();
 });

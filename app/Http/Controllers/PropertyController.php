@@ -8,13 +8,24 @@ use App\Type;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 use TCG\Voyager\Traits\Spatial;
+use Carbon\Carbon;
 
 
 class PropertyController extends Controller
 {
   use Spatial;
 
+  public function home()
+  {
+    $properties = Property::all();
 
+    return view('index', compact('properties'));
+  }
+
+  public function getAbout()
+  {
+    return view('aboutus');
+  }
   /**
    * Display a listing of the resource.
    *
@@ -22,7 +33,7 @@ class PropertyController extends Controller
    */
   public function index()
   {
-	$properties = Property::all();
+	$properties = Property::orderBy('id', 'desc')->paginate(1);
 
 	return view('property.all', compact('properties'));
   }
@@ -44,8 +55,14 @@ class PropertyController extends Controller
 	  endif;
 	endforeach;
 
+    $property->gallery = $this->gallery_thumbnails('normal', $property->gallery);
+
+	$property->price = strrev(chunk_split(strrev($property->price), 3, ','));
+	
 	$latitude = $property->gps_coordinates->getLat();
 	$longitude = $property->gps_coordinates->getLng();
+
+	$property->created_at = new Carbon($property->created_at);
 
 
 	Mapper::map($latitude, $longitude);
@@ -54,17 +71,18 @@ class PropertyController extends Controller
 
   }
 
-  public function searchPropertyByCategory(Request $request){
-	$properties = Property::where ('category', $request->query('id'));
-	return view('property.create', compact('properties'));
-  }
+  public function gallery_thumbnails($type, $gallery)
+  {
+    $thumbnails = [];
 
-  public function showSearchForm(){
-	return view('property.search');
-  }
+    foreach(json_decode($gallery) as $image_url):
+      $ext = pathinfo($image_url, PATHINFO_EXTENSION);
+      $name = str_replace_last('.'.$ext, '', $image_url);
+      $url = $name . '-' . $type . '.' . $ext;
+      array_push($thumbnails, $url);
+    endforeach;
 
-  public function results(Request $request){
-    var_dump($request);
+    return $thumbnails;
   }
 
 }
