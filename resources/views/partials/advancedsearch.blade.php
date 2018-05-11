@@ -18,14 +18,21 @@
 
 						<select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Your City">
 
+							<option>New york, CA</option>
+							<option>Paris</option>
+							<option>Casablanca</option>
+							<option>Tokyo</option>
+							<option>Marraekch</option>
+							<option>kyoto , shibua</option>
 						</select>
 					</div>
 					<div class="col-xs-6">
 
-						<select id="basic" class="selectpicker show-tick form-control">
+						<select id="basic" class="show-tick form-control">
 							<option> -Status- </option>
 							<option>Rent </option>
-							<option>Sale</option>
+							<option>Boy</option>
+							<option>used</option>
 
 						</select>
 					</div>

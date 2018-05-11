@@ -26,24 +26,14 @@ class PropertyController extends Controller
   {
     return view('aboutus');
   }
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
+
   public function index()
   {
-	$properties = Property::orderBy('id', 'desc')->paginate(1);
+	$properties = Property::orderBy('id', 'desc')->paginate(9);
 
 	return view('property.all', compact('properties'));
   }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function show($id)
   {
 	$property = Property::find($id);
@@ -83,6 +73,14 @@ class PropertyController extends Controller
     endforeach;
 
     return $thumbnails;
+  }
+
+  public function search(Request $request)
+  {
+
+    $properties = Property::search($request['search_item'])->paginate(9);
+    $searchflag = true;
+    return view('property.all', compact('properties', 'searchflag'));
   }
 
 }

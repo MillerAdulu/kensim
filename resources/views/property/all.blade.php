@@ -2,18 +2,23 @@
 
 @section('title', 'Properties')
 
+@section('customcss')
+    <link rel="stylesheet" href="{{ asset('assets/css/lightslider.min.css') }}">
+@endsection
+
 @section('content')
-    <link rel="stylesheet" href="{{asset('assets/css/lightslider.min.css')}}">
     <!-- property area -->
     <div class="properties-area recent-property" style="background-color: #FFF;">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 padding-top-40 properties-page">
                     <div class="section clear">
-                        <div class="col-xs-10 page-subheader sorting pl0"></div>
+                        <div class="col-xs-10 page-subheader sorting pl0">
+                          @include('search.algoliaimage')
+                        </div>
                         <div class="col-xs-2 layout-switcher">
-                            <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i>  </a>
-                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>
+                            <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i></a>
+                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i></a>
                         </div><!--/ .layout-switcher-->
 
                     </div>
@@ -51,7 +56,7 @@
                     <div class="section">
                         <div class="pull-right">
                             <div class="pagination">
-                                {{ $properties->links('vendor.pagination.bootstrap-4') }}
+                                 {{ $properties->links('vendor.pagination.bootstrap-4') }}
                             </div>
                         </div>
                     </div>
@@ -70,4 +75,26 @@
     </div>
 
     @include('chat.chat')
+@endsection
+
+@section('customjs')
+    <script type="text/javascript" src="{{asset('assets/js/lightslider.min.js')}}"></script>
+
+    <script>
+      $(document).ready(function () {
+
+        $('#image-gallery').lightSlider({
+          gallery: true,
+          item: 1,
+          thumbItem: 9,
+          slideMargin: 0,
+          speed: 500,
+          auto: true,
+          loop: true,
+          onSliderLoad: function () {
+            $('#image-gallery').removeClass('cS-hidden');
+          }
+        });
+      });
+    </script>
 @endsection

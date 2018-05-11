@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.theme.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.transitions.css')}}">
+
+    @yield('customcss')
+
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 </head>
@@ -65,11 +68,9 @@
 <script src="{{asset('assets/js/icheck.min.js')}}"></script>
 <script src="{{asset('assets/js/price-range.js')}}"></script>
 
-<script type="text/javascript" src="{{asset('assets/js/lightslider.min.js')}}"></script>
+@yield('customjs')
 
 <script src="{{asset('assets/js/main.js')}}"></script>
-
-@yield('customjs')
 
 </body>
 </html>

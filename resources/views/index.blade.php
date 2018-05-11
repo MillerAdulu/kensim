@@ -19,13 +19,16 @@
                     <h2>property Searching Just Easier</h2>
                     --
 
-                    <form>
-                        <div class="" data-wow-delay="0.8s">
-                            <input type="text"align="center" class="form-control" placeholder="Search">
-                        </div>
-                        <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
 
-                    </form>
+                        {!! Form::open(['url' => '/property/search']) !!}
+
+                        <div class="" data-wow-delay="0.8s">
+                            {!! Form::text('search_item', '', ['class' => 'form-control', 'placeholder' => 'Search', 'align' => 'center']) !!}
+                        </div>
+
+                        <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
+                        {!! Form::close() !!}
+
 
 
                 </div>

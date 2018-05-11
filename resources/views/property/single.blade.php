@@ -2,6 +2,10 @@
 
 @section('title', $property->property_name)
 
+@section('customcss')
+	<link rel="stylesheet" href="{{ asset('assets/css/lightslider.min.css') }}">
+@endsection
+
 @section('content')
 	<link rel="stylesheet" href="{{asset('assets/css/lightslider.min.css')}}">
 	<div class="page-head">
@@ -185,6 +189,7 @@
 @endsection
 
 @section('customjs')
+	<script type="text/javascript" src="{{asset('assets/js/lightslider.min.js')}}"></script>
 	<script>
     $(document).ready(function () {
 

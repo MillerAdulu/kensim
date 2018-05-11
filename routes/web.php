@@ -18,14 +18,17 @@ Route::post('/contact-us', 'ContactController@submit');
 
 Route::get('about-us', 'PropertyController@getAbout');
 
-
 Route::get('/blog', 'PostController@allPosts');
 
 Route::get('/blog/{slug}', 'PostController@showPost');
 
+Route::post('/blog/search', 'PostController@search');
+
 Route::get('/property', 'PropertyController@index');
 
 Route::get('/property/{id}', 'PropertyController@show');
+
+Route::post('/property/search', 'PropertyController@search');
 
 Route::group(['prefix' => 'admin'], function () {
   Voyager::routes();
