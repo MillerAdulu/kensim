@@ -12,7 +12,7 @@
             <div class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-12">
                 <div class="header-half header-social">
                     <ul class="list-inline">
-                        <li><a href="https://www.facebook.com/kennedy.nakachi.3"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.facebook.com/kennedy.nakachi.3" target="_blank"><i class="fa fa-facebook"></i></a></li>
                     </ul>
                 </div>
             </div>

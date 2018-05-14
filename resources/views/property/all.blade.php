@@ -15,7 +15,7 @@
                     <div class="section clear">
                         <div class="col-xs-10 page-subheader sorting pl0">
                           @include('search.algoliaimage')
-                        </div>
+                        </div>
                         <div class="col-xs-2 layout-switcher">
                             <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i></a>
                             <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i></a>
@@ -40,8 +40,8 @@
                                             <span class="pull-left"><b> Area :</b> {{ $property->size }} Sq Ft </span>
                                             <span class="proerty-price pull-right"> KES {{ strrev(chunk_split(strrev($property->price), 3, ',')) }}</span>
                                             <div class="property-icon">
-                                                <img src="{{asset('assets/img/icon/bed.png')}}"> ({{ $property->bedrooms }})|
-                                                <img src="{{asset('assets/img/icon/shawer.png')}}"> ({{ $property->bathrooms }})
+                                                <img src="{{asset('assets/img/icon/bed.png')}}"> ({{ $property->Bedrooms }})|
+                                                <img src="{{asset('assets/img/icon/shawer.png')}}"> ({{ $property->Bathrooms }})
                                             </div>
                                         </div>
 
@@ -64,7 +64,7 @@
                 <div class="col-md-3 pl0 padding-top-40">
                     <div class="blog-asside-right pl0">
 
-                        @include('partials.advancedsearch')
+                        @include('search.advancedsearch')
 
                         @include('partials.similar')
 

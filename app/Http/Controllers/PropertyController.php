@@ -13,74 +13,102 @@ use Carbon\Carbon;
 
 class PropertyController extends Controller
 {
-  use Spatial;
+    use Spatial;
 
-  public function home()
-  {
-    $properties = Property::all();
+    public function home()
+    {
+        $properties = Property::all();
 
-    return view('index', compact('properties'));
-  }
+        return view('index', compact('properties'));
+    }
 
-  public function getAbout()
-  {
-    return view('aboutus');
-  }
+    public function getAbout()
+    {
+        return view('aboutus');
+    }
 
-  public function index()
-  {
-	$properties = Property::orderBy('id', 'desc')->paginate(9);
+    public function index()
+    {
+        $properties = Property::orderBy('id', 'desc')->paginate(9);
 
-	return view('property.all', compact('properties'));
-  }
+        return view('property.all', compact('properties'));
+    }
 
-  public function show($id)
-  {
-	$property = Property::find($id);
-	$types = Type::all();
+    public function show($id)
+    {
+        $property = Property::find($id);
+        $types = Type::all();
 
-	foreach($types as $type):
-	  if($type->id = $property->property_type):
-		$property->type = $type->type;
-	  endif;
-	endforeach;
+        foreach($types as $type):
+            if($type->id = $property->property_type):
+                $property->type = $type->type;
+            endif;
+        endforeach;
 
-    $property->gallery = $this->gallery_thumbnails('normal', $property->gallery);
+        $property->gallery = $this->gallery_thumbnails('normal', $property->gallery);
 
-	$property->price = strrev(chunk_split(strrev($property->price), 3, ','));
-	
-	$latitude = $property->gps_coordinates->getLat();
-	$longitude = $property->gps_coordinates->getLng();
+        $property->price = strrev(chunk_split(strrev($property->price), 3, ','));
 
-	$property->created_at = new Carbon($property->created_at);
+        $latitude = $property->gps_coordinates->getLat();
+        $longitude = $property->gps_coordinates->getLng();
+
+        $property->created_at = new Carbon($property->created_at);
 
 
-	Mapper::map($latitude, $longitude);
+        Mapper::map($latitude, $longitude);
 
-	return view('property.single', compact('property'));
+        return view('property.single', compact('property'));
 
-  }
+    }
 
-  public function gallery_thumbnails($type, $gallery)
-  {
-    $thumbnails = [];
+    public function gallery_thumbnails($type, $gallery)
+    {
+        $thumbnails = [];
 
-    foreach(json_decode($gallery) as $image_url):
-      $ext = pathinfo($image_url, PATHINFO_EXTENSION);
-      $name = str_replace_last('.'.$ext, '', $image_url);
-      $url = $name . '-' . $type . '.' . $ext;
-      array_push($thumbnails, $url);
-    endforeach;
+        foreach(json_decode($gallery) as $image_url):
+            $ext = pathinfo($image_url, PATHINFO_EXTENSION);
+            $name = str_replace_last('.'.$ext, '', $image_url);
+            $url = $name . '-' . $type . '.' . $ext;
+            array_push($thumbnails, $url);
+        endforeach;
 
-    return $thumbnails;
-  }
+        return $thumbnails;
+    }
 
-  public function search(Request $request)
-  {
+    public function search(Request $request)
+    {
+        $properties = Property::search($request['search_item'])->paginate(9);
+        $searchflag = true;
+        return view('property.all', compact('properties', 'searchflag'));
+    }
 
-    $properties = Property::search($request['search_item'])->paginate(9);
-    $searchflag = true;
-    return view('property.all', compact('properties', 'searchflag'));
-  }
+    public function advancedSearch(Request $request){
+        $keyword = $request['keyword'];
+        $maxPrice = $request['maxPrice'];
+        $minPrice = $request['minPrice'];
+        $mode = $request['mode'];
+        $bathrooms = $request['bathrooms'];
+        $bedrooms = $request['bedrooms'];
+
+        $rawFilters = [
+            'price >= ' . $minPrice,
+            'price <= ' . $maxPrice,
+            'mode = ' . $mode,
+            'Bathrooms >= ' . $bathrooms,
+            'Bedrooms >= ' . $bedrooms,
+        ];
+
+        $queryFilters = array_filter($rawFilters);
+        $filterString = implode(' AND ', $queryFilters);
+
+        $params = [
+            'optionalFilters' => $filterString
+        ];
+
+        $properties = Property::search($keyword)->with($params)->paginate(9);
+        $searchFlag = true;
+
+        return view('property.all', compact('properties', 'searchFlag'));
+    }
 
 }

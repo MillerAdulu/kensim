@@ -84,7 +84,7 @@
                                     </span>
 							<span class="property-info-entry">
                                         <span class="property-info-label">Bedrooms</span>
-                                        <span class="property-info-value">{{ $property->bedrooms }}</span>
+                                        <span class="property-info-value">{{ $property->Bedrooms }}</span>
                                     </span>
 						</div>
 
@@ -96,7 +96,7 @@
                                     </span>
 							<span class="property-info-entry">
                                         <span class="property-info-label">Bathrooms</span>
-                                        <span class="property-info-value">{{ $property->bathrooms }}</span>
+                                        <span class="property-info-value">{{ $property->Bathrooms }}</span>
                                     </span>
 						</div>
 
@@ -174,7 +174,7 @@
 
 					@include('partials.similar')
 
-					@include('partials.advancedsearch')
+					@include('search.advancedsearch')
 
 				</aside>
 			</div>

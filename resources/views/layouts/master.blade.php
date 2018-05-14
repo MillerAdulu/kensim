@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.theme.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.transitions.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/lightslider.min.css')}}">
 
     @yield('customcss')
 
@@ -51,23 +52,20 @@
 
 @include('partials.footer')
 
+<script src="{{asset('assets/js/modernizr.custom.79639.js')}}"></script>
 <script src="{{asset('assets/js/modernizr-2.6.2.min.js')}}"></script>
-
 <script src="{{asset('assets/js/jquery-1.10.2.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.slitslider.js')}}"></script>
 <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap-hover-dropdown.js')}}"></script>
-
 <script src="{{asset('assets/js/easypiechart.min.js')}}"></script>
 <script src="{{asset('assets/js/jquery.easypiechart.min.js')}}"></script>
-
 <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
-
 <script src="{{asset('assets/js/wow.js')}}"></script>
-
 <script src="{{asset('assets/js/icheck.min.js')}}"></script>
 <script src="{{asset('assets/js/price-range.js')}}"></script>
-
+<script type="text/javascript" src="{{asset('assets/js/lightslider.min.js')}}"></script>
 @yield('customjs')
 
 <script src="{{asset('assets/js/main.js')}}"></script>
