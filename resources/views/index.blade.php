@@ -17,9 +17,6 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
                     <h2>property Searching Just Easier</h2>
-                    --
-
-
                         {!! Form::open(['url' => '/property/search']) !!}
 
                         <div class="" data-wow-delay="0.8s">
@@ -28,9 +25,6 @@
 
                         <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
                         {!! Form::close() !!}
-
-
-
                 </div>
 
             </div>
@@ -67,16 +61,15 @@
                     </div>
                     @endforeach
 
-
                     <div class="col-sm-6 col-md-3 p0">
-                        <div class="box-tree more-proerty text-center">
+                        <div class="box-tree proerty-item more-proerty text-center">
                             <div class="item-tree-icon">
                                 <i class="fa fa-th"></i>
                             </div>
                             <div class="more-entry overflow">
                                 <h5><a href="/property" >CAN'T DECIDE ? </a></h5>
                                 <h5 class="tree-sub-ttl">Show all properties</h5>
-                                <a href="/property" class="btn border-btn more-black btn-link">All properties</a>
+                                <a href="/property" class="btn border-btn more-black">All properties</a>
                             </div>
                         </div>
                     </div>

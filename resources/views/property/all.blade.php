@@ -15,7 +15,7 @@
                     <div class="section clear">
                         <div class="col-xs-10 page-subheader sorting pl0">
                           @include('search.algoliaimage')
-                        </div>
+                        </div>
                         <div class="col-xs-2 layout-switcher">
                             <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i></a>
                             <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i></a>
@@ -26,6 +26,7 @@
                     <div class="section clear">
                         <div id="list-type" class="proerty-th">
 
+                            @if(count($properties) > 0)
                             @foreach($properties as $property)
 
                                 <div class="col-sm-6 col-md-4 p0">
@@ -50,6 +51,19 @@
                                 </div>
 
                             @endforeach
+                            @else
+                                    <div class="box-tree proerty-item more-proerty text-center">
+                                        <div class="item-tree-icon">
+                                            <i class="fa fa-th"></i>
+                                        </div>
+                                        <div class="more-entry overflow">
+                                            <h5><a href="/property" >NO RESULTS FOUND </a></h5>
+                                            <h5 class="tree-sub-ttl">Show all properties</h5>
+                                            <a href="/property" class="btn border-btn more-black">All properties</a>
+                                        </div>
+                                    </div>
+
+                            @endif
 
                         </div>
                     </div>
