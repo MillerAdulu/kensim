@@ -39,12 +39,6 @@ class PropertyController extends Controller
         $property = Property::find($id);
         $types = Type::all();
 
-        foreach($types as $type):
-            if($type->id = $property->property_type):
-                $property->type = $type->type;
-            endif;
-        endforeach;
-
         $property->gallery = $this->gallery_thumbnails('normal', $property->gallery);
 
         $property->price = strrev(chunk_split(strrev($property->price), 3, ','));
@@ -57,7 +51,7 @@ class PropertyController extends Controller
 
         Mapper::map($latitude, $longitude);
 
-        return view('property.single', compact('property'));
+        return view('property.single', compact('property', 'types'));
 
     }
 

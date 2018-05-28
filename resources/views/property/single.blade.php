@@ -131,7 +131,13 @@
 							<ul class="additional-details-list clearfix">
 								<li>
 									<span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Type</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{ $property->type }}</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+                                        @foreach($types as $type)
+                                        @if($type->id == $property->property_type)
+                                            {{ $type->property_type }}
+                                        @endif
+                                        @endforeach
+                                    </span>
 								</li>
 
 								<li>
