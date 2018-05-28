@@ -60,7 +60,7 @@
                                     </span>
 								<span class="property-info-entry">
                                         <span class="property-info-label">Status</span>
-                                        <span class="property-info-value">For {{ $property->mode }}</span>
+                                        <span class="property-info-value">For {{ $property->mode == 1 ? 'Rent' : 'Sale' }}</span>
                                     </span>
 							</div>
 
