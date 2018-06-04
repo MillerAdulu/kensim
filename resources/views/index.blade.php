@@ -49,7 +49,7 @@
                     <div class="col-sm-6 col-md-3 p0">
                         <div class="box-two proerty-item">
                             <div class="item-thumb">
-                                <a href="/property/{{ $property->id }}" ><img src="{{asset('assets/img/demo/property-1.jpg')}}"></a>
+                                <a href="/property/{{ $property->id }}" ><img src="{{ Voyager::image($property->thumbnail('view', 'featured_image')) }}"></a>
                             </div>
                             <div class="item-entry overflow">
                                 <h5><a href="/property/{{ $property->id }}" >{{ $property->property_name }}</a></h5>
