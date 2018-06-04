@@ -17,7 +17,7 @@ class PropertyController extends Controller
 
     public function home()
     {
-        $properties = Property::all();
+        $properties = Property::take(4)->get();
 
         return view('index', compact('properties'));
     }

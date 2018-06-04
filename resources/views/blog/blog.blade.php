@@ -61,10 +61,14 @@
 				<div class="blog-asside-right col-md-3">
 					<div class="panel panel-default sidebar-menu wow fadeInRight animated" >
 						<div class="panel-heading">
-							<h3 class="panel-title">Text widget</h3>
+							<h3 class="panel-title">Property Quote</h3>
 						</div>
 						<div class="panel-body text-widget">
-							<p>Improved own provided blessing may peculiar domestic. Sight house has sex never. No visited raising gravity outward subject my cottage mr be. Hold do at tore in park feet near my case.
+							<p>“Real estate cannot be lost or stolen, nor can it be carried away. Purchased with common sense, paid for in full, and managed with reasonable care, it is about the safest investment in the world.”
+
+
+
+								Franklin D. Roosevelt.
 							</p>
 
 						</div>

@@ -70,7 +70,7 @@ p {
     margin:0;
 }
 a {
-    color: #d27e04;
+    color: #d27e03;
     outline: 0;
     font-weight: bold;
     -webkit-transition: all .8s ease;
@@ -1025,7 +1025,7 @@ label small{
 .slider-content h2 {
     font-size: 40px; 
     margin-bottom: 20px;
-    text-transform: uppercase;color: rgba(255, 165, 0, 0.71);
+    text-transform: uppercase;color: rgba(245,210, 0, 0.71);
 font-weight: 500;
 }
 .slider-content p {
@@ -1699,7 +1699,7 @@ proerty-th
     margin: 10px;
 }
 .proerty-th .proerty-item .item-thumb{
-    position: relative;
+    position:static;
 }
 .proerty-th .proerty-item:hover  .item-thumb img{
     opacity: 1;
