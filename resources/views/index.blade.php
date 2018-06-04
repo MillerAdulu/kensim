@@ -93,42 +93,21 @@
                 <div class="row testimonial">
                     <div class="col-md-12">
                         <div id="testimonial-slider">
+                            
+                            @foreach($testimonials as $testimonial)
+
                             <div class="item">
                                 <div class="client-text">
-                                    <p>Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
+                                    <p>{{ $testimonial->comment }}</p>
+                                    <h4><strong>{{ $testimonial->name }}, </strong><i>{{ $testimonial->profession }}</i></h4>
                                 </div>
                                 <div class="client-face wow fadeInRight" data-wow-delay=".9s">
                                     <img src="assets/img/client-face1.png" alt="">
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="client-text">
-                                    <p>Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
-                                </div>
-                                <div class="client-face">
-                                    <img src="assets/img/client-face2.png" alt="">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="client-text">
-                                    <p>Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
-                                </div>
-                                <div class="client-face">
-                                    <img src="assets/img/client-face1.png" alt="">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="client-text">
-                                    <p>Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
-                                </div>
-                                <div class="client-face">
-                                    <img src="assets/img/client-face2.png" alt="">
-                                </div>
-                            </div>
+                    
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -149,51 +128,29 @@
             <div class="row">
                 <div class="col-md-12 col-xs-12 percent-blocks m-main" data-waypoint-scroll="true">
                     <div class="row">
-                        <div class="col-sm-3 col-xs-6">
+                        <div class="col-sm-6 col-xs-6">
                             <div class="count-item">
                                 <div class="count-item-circle">
                                     <span class="pe-7s-users"></span>
                                 </div>
                                 <div class="chart" data-percent="5000">
-                                    <h2 class="percent" id="counter">0</h2>
-                                    <h5>HAPPY CUSTOMER </h5>
+                                    <h2 class="percent" id="countr">{{ count($testimonials )}}</h2>
+                                    <h5>HAPPY CUSTOMERS </h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-xs-6">
+                        <div class="col-sm-6 col-xs-6">
                             <div class="count-item">
                                 <div class="count-item-circle">
                                     <span class="pe-7s-home"></span>
                                 </div>
                                 <div class="chart" data-percent="12000">
-                                    <h2 class="percent" id="counter1">0</h2>
+                                    <h2 class="percent" id="couner1">{{ count($properties) }}</h2>
                                     <h5>Properties in stock</h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="count-item">
-                                <div class="count-item-circle">
-                                    <span class="pe-7s-flag"></span>
-                                </div>
-                                <div class="chart" data-percent="120">
-                                    <h2 class="percent" id="counter2">0</h2>
-                                    <h5>City registered </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="count-item">
-                                <div class="count-item-circle">
-                                    <span class="pe-7s-graph2"></span>
-                                </div>
-                                <div class="chart" data-percent="5000">
-                                    <h2 class="percent"  id="counter3">5000</h2>
-                                    <h5>DEALER BRANCHES</h5>
-                                </div>
-                            </div>
 
-                        </div>
                     </div>
                 </div>
             </div>

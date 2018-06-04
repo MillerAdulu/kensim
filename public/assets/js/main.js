@@ -83,10 +83,10 @@ $(document).ready(function () {
     });
 
     setTimeout(function () {
-        $('#counter').text('0');
-        $('#counter1').text('0');
-        $('#counter2').text('0');
-        $('#counter3').text('0');
+        // $('#counter').text('0');
+        // $('#counter1').text('0');
+        // $('#counter2').text('0');
+        // $('#counter3').text('0');
         setInterval(function () {
             var curval = parseInt($('#counter').text());
             var curval1 = parseInt($('#counter1').text().replace(' ', ''));

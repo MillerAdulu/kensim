@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Property;
+use App\Testimonial;
 use App\Type;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
@@ -17,8 +18,8 @@ class PropertyController extends Controller
 
     public function home()
     {
-        $properties = Property::take(4)->get();
-        $testimonials = Testimony::all();
+        $properties = Property::orderBy('id', 'desc')->take(4)->get();
+        $testimonials = Testimonial::all();
         return view('index', compact('properties', 'testimonials'));
     }
 
