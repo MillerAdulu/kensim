@@ -15,6 +15,7 @@
         "eyewitness/eye": "dev-beta",
         "fideloper/proxy": "~4.0",
         "grimzy/laravel-mysql-spatial": "^1.0",
+        "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.6.*",
         "laravel/scout": "^4.0",
         "laravel/tinker": "~1.0",

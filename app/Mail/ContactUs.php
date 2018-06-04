@@ -9,6 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class ContactUs extends Mailable
 {
+    private $message;
     use Queueable, SerializesModels;
 
     /**
@@ -16,9 +17,9 @@ class ContactUs extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($message)
     {
-        //
+        $this->message = $message;
     }
 
     /**
@@ -28,6 +29,9 @@ class ContactUs extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this
+        ->from($this->message->email)
+        ->subject($this->message->subject)
+        ->view('email.sent');
     }
 }
