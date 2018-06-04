@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts.master')
 
 @section('content')
     <div class="">404 page not found</div>

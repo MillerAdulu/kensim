@@ -17,13 +17,8 @@ class PropertyController extends Controller
 
     public function home()
     {
-<<<<<<< Updated upstream
         $properties = Property::take(4)->get();
-=======
-        $properties = Property::all();
         $testimonials = Testimony::all();
->>>>>>> Stashed changes
-
         return view('index', compact('properties', 'testimonials'));
     }
 
