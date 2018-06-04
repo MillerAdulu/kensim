@@ -43,7 +43,7 @@
 								</a>
 							</div>
 							<p class="intro">{{ $post->excerpt }}</p>
-							<p class="read-more">
+								<p class="read-more">
 								<a href="/blog/{{ $post->slug }}" class="btn btn-default btn-border">Continue reading</a>
 							</p>
 						</section>

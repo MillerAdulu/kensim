@@ -178,8 +178,6 @@
 
 						@include('partials.agent')
 
-						@include('partials.similar')
-
 						@include('search.advancedsearch')
 
 					</aside>

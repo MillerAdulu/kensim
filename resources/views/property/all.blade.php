@@ -80,8 +80,6 @@
 
                         @include('search.advancedsearch')
 
-                        @include('partials.similar')
-
                     </div>
                 </div>
             </div>

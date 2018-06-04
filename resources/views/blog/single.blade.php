@@ -50,8 +50,6 @@
 						</div>
 					</div>
 
-					@include('partials.similar')
-
 				</div>
 
 			</div>
