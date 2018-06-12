@@ -23,6 +23,8 @@ class ContactController extends Controller
       $mail->subject= $request['subject'];
       $mail->message = $request['message'];
 
-      Mail::send()
+      Mail::send();
     }
+    
 }
+
