@@ -1,24 +1,14 @@
 # Kensim
 
 ## Introduction
-This project was submitted to [Strathmore University](https://www.strathmore.edu/) on July of 2018 as part of the evaluation for Human Computer Interaction.
-
-## Contributors
-    1. [Anastasia Macharia][1]
-    2. [Caroline Kamau][2]
-    3. [Miller Adulu][3]
-
-[1]: https://github.com/clare44macharia
-[2]: https://github.com/Caroline-Kamau
-[3]: https://github.com/MillerAdulu
+This project was submitted to [Strathmore University](https://www.strathmore.edu/) on July of 2018 as part of the evaluation for Human Computer Interaction. The contributors fof this project were: [Anastasia Macharia](https://github.com/clare44macharia), [Caroline Kamau](https://github.com/Caroline-Kamau) and [Miller Adulu](https://github.com/MillerAdulu)
 
 This HCI project was intended to improve the user experience for [Kensim](http://kensim.co.ke). Kensim is a real estate website for an agency that is supposed to enable them showcase their properties for interested clients. As of the time the project commenced Kensim the experience on Kensim was like [this](https://drive.google.com/file/d/11LYHkYIaI_KUt82wDgZQKXnr8p5VjAr7/view).
 
 ## Areas addressed
-    1. Getting the search to work in a robust manner using the [Algolia][4] search engine
+    1. Getting the search to work in a robust manner using the Algolia search engine
     2. Improving the UI to be adaptable to mobile
     3. Improving the process of adding properties to the listings on the backend
-[4]: https://www.algolia.com/
 
 ## Setup
 
@@ -33,5 +23,5 @@ This HCI project was intended to improve the user experience for [Kensim](http:/
 9. Run `php artisan eyewitness:install` to setup [Eyewitness.io](https://eyewitness.io/) to help view the application status.
 10. Run `php artisan serve` to launch the application.
 11. On the Laravel Voyager admin panel, add a few properties and pictures.
-12. On a separate terminal opened in the same folder, run `php artisan scout:import "App\Property` to index the added properties so that they are available for searching.
-13. Close the second terminal and search away.
+12. On a separate terminal opened in the same folder, run `php artisan scout:import "App\Property"` to index the added properties so that they are available for searching.
+13. Close the second terminal and search away. :tada:
