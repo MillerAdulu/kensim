@@ -1,58 +1,30 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Kensim
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Introduction
+This project was submitted to [Strathmore University](https://www.strathmore.edu/) on July of 2018 as part of the evaluation for Human Computer Interaction. The contributors of this project are:
+    1. [Anastasia Macharia](https://github.com/clare44macharia) Github
+    2. [Caroline Kamau](https://github.com/Caroline-Kamau) Github
+    3. [Miller Adulu](https://github.com/MillerAdulu) Github
 
-## About Laravel
+This HCI project was intended to improve the user experience for [Kensim](http://kensim.co.ke). Kensim is a real estate website for an agency that is supposed to enable them showcase their properties for interested clients. As of the time the project commenced Kensim the experience on Kensim was like [this](https://drive.google.com/file/d/11LYHkYIaI_KUt82wDgZQKXnr8p5VjAr7/view).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## Areas addressed
+    1. Getting the search to work in a robust manner using the [Algolia](https://www.algolia.com/) search engine
+    2. Improving the UI to be adaptable to mobile
+    3. Improving the process of adding properties to the listings on the backend
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Setup
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. Clone the project
+2. Rename the *.env.example* file to *.env*
+3. Run *composer install* in the directory. If you get errors, ensure to check that the required php extensions are installed and enabled on your server.
+4. Run *php artisan key:generate* in the directory to set the APP_KEY used by [Laravel](https://laravel.com/)
+5. Setup an algolia account and copy the application id and secret into the *.env* file that allow upload of models *(The admin id)*. Configure the remaining options based on the [documentation](https://www.algolia.com/doc/api-client/laravel/install/).
+6. Setup a Google Maps API and copy the API key into the *.env* file and set the central latitude and longitude appropriately.
+7. Upload the sample database provided to your server and set the database variables accordingly.
+8. Setup a [Laravel Voyager](https://docs.laravelvoyager.com) instance using these [instructions](https://docs.laravelvoyager.com/getting-started/installation).
+9. Run `php artisan eyewitness:install` to setup [Eyewitness.io](https://eyewitness.io/) to help view the application status.
+10. Run `php artisan serve` to launch the application.
+11. On the Laravel Voyager admin panel, add a few properties and pictures.
+12. On a separate terminal opened in the same folder, run `php artisan scout:import "App\Property` to index the added properties so that they are available for searching.
+13. Close the second terminal and search away.
