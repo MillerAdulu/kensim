@@ -1,18 +1,24 @@
 # Kensim
 
 ## Introduction
-This project was submitted to [Strathmore University](https://www.strathmore.edu/) on July of 2018 as part of the evaluation for Human Computer Interaction. The contributors of this project are:
+This project was submitted to [Strathmore University](https://www.strathmore.edu/) on July of 2018 as part of the evaluation for Human Computer Interaction.
 
-    1. [Anastasia Macharia](https://github.com/clare44macharia) Github
-    2. [Caroline Kamau](https://github.com/Caroline-Kamau) Github
-    3. [Miller Adulu](https://github.com/MillerAdulu) Github
+## Contributors
+    1. [Anastasia Macharia][1]
+    2. [Caroline Kamau][2]
+    3. [Miller Adulu][3]
+
+[1]: https://github.com/clare44macharia
+[2]: https://github.com/Caroline-Kamau
+[3]: https://github.com/MillerAdulu
 
 This HCI project was intended to improve the user experience for [Kensim](http://kensim.co.ke). Kensim is a real estate website for an agency that is supposed to enable them showcase their properties for interested clients. As of the time the project commenced Kensim the experience on Kensim was like [this](https://drive.google.com/file/d/11LYHkYIaI_KUt82wDgZQKXnr8p5VjAr7/view).
 
 ## Areas addressed
-    1. Getting the search to work in a robust manner using the [Algolia](https://www.algolia.com/) search engine
+    1. Getting the search to work in a robust manner using the [Algolia][4] search engine
     2. Improving the UI to be adaptable to mobile
     3. Improving the process of adding properties to the listings on the backend
+[4]: https://www.algolia.com/
 
 ## Setup
 
