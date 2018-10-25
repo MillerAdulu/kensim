@@ -2,6 +2,7 @@
 
 ## Introduction
 This project was submitted to [Strathmore University](https://www.strathmore.edu/) on July of 2018 as part of the evaluation for Human Computer Interaction. The contributors of this project are:
+
     1. [Anastasia Macharia](https://github.com/clare44macharia) Github
     2. [Caroline Kamau](https://github.com/Caroline-Kamau) Github
     3. [Miller Adulu](https://github.com/MillerAdulu) Github
