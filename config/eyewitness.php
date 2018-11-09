@@ -213,7 +213,7 @@ return [
      |
      | Your unique Eyewitness.io application token & secret key. These settings
      | will be automatically set by the installer when you first run
-     | 'artisan eyewitness:install' and placed in your "..env" file.
+     | 'artisan eyewitness:install' and placed in your ".env" file.
      |
      | You can all generate a new token and secret key automatically by running
      | 'artisan eyewitness:regenerate'.
